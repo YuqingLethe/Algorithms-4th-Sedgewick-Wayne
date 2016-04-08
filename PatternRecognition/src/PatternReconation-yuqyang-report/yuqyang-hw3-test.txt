@@ -1,0 +1,334 @@
+********************************************************************************
+*                              Submission Summary                              *
+********************************************************************************
+-rw-rw-r-- 1 4.5K Sep 25 16:59 BruteCollinearPoints.java
+-rw-rw-r-- 1 5.7K Sep 25 17:00 FastCollinearPoints.java
+-rw-rw-r-- 1 3.1K Sep 25 13:05 Point.java
+-rw-rw-r-- 1  11K Sep 25 16:58 readme.txt
+
+********************************************************************************
+*                                 Compilation                                  *
+********************************************************************************
+  *  BruteCollinearPoints.java No Compilation Error
+  *  FastCollinearPoints.java No Compilation Error
+  *  Point.java               No Compilation Error
+
+********************************************************************************
+*                                  API Check                                   *
+********************************************************************************
+  *  BruteCollinearPoints     No API Violation
+  *  FastCollinearPoints      No API Violation
+
+********************************************************************************
+*                                 Correctness                                  *
+********************************************************************************
+Brute Test 01, constructor
+Brute Test 02, numberOfPoints
+Brute Test 03, numberOfSegments with grid points
+Brute Test 04, numberOfSegments with input grid files
+Brute Test 05: Test segments() with input grid files
+Brute Test 06: Test consistency and running time among repeated calls
+Brute Test 07: Test correctness with input grid files
+Brute Test 08: Test correctness with files having at most 4 points on any line segment
+Brute Test 09: Test correctness with files having 5+ points on some line segments
+Brute Test 10: Test correctness with point sets having no 4 collinear points
+Brute Test 11: Test correctness with additional files
+
+Total: 6/11 tests passed!
+
+
+Testing methods in your BruteCollinearPoints, using our reference Point class. Running 10 or 11 total tests, not counting the pretest.
+
+Time limit is 20 seconds for each operation.
+=========================================================================
+Pretest with input10 and numberOfSegments():
+  *  input10                            CORRECT
+ ==> PASSED
+
+
+Test 01: Test constructor with width-by-height grid points:
+  *  4-by-5                             CONSTRUCTED
+  *  4-by-10                            CONSTRUCTED
+  *  4-by-20                            CONSTRUCTED
+  *  4-by-40                            CONSTRUCTED
+  *  4-by-80                            CONSTRUCTED
+ ==> PASSED
+
+Test 02: Test numberOfPoints() with width-by-height grid points:
+  *  4-by-5                             CORRECT
+  *  4-by-10                            CORRECT
+  *  4-by-20                            CORRECT
+  *  4-by-40                            CORRECT
+  *  4-by-80                            CORRECT
+ ==> PASSED
+
+
+ ** Tests 03--05 check for independence between numberOfSegments and segments **
+Test 03: Test numberOfSegments() with width-by-height grid points:
+  *  4-by-5                             CORRECT
+  *  4-by-10                            CORRECT
+  *  4-by-20                            CORRECT
+  *  4-by-40                            CORRECT
+  *  4-by-80                            CORRECT
+ ==> PASSED
+
+Test 04: Test numberOfSegments() with input grid files:
+  *  grid4x4                            CORRECT
+  *  grid5x5                            CORRECT
+  *  grid6x6                            CORRECT
+ ==> PASSED
+
+Test 05: Test segments() with input grid files:
+  *  grid4x4                            CORRECT
+  *  grid5x5                            CORRECT
+  *  grid6x6                            CORRECT
+ ==> PASSED
+
+
+Test 06: Test consistency and running time among repeated calls:
+  *  input800                           
+========================================================================
+call index      numberOfSegments()      items in segments()        time
+-------------------------------------------------------------------------
+0                         8                    16               5.85000
+1                        24                    32               10.78800
+2                        40                    48               15.72600
+3                        56                    64               20.66400
+4                        72                    80               25.60200
+5                        88                    96               30.53900
+6                       104                   112               35.47200
+7                       120                   128               40.40800
+8                       136                   144               45.34200
+9                       152                   160               50.30500
+-------------------------------------------------------------------------
+ ==> FAILED
+
+
+ ** Tests 07--11 are for correctness ** 
+Test 07: Test correctness with input grid files:
+  *  grid4x4                            FAILED -- wrong collection of segments
+  *  grid5x5                            FAILED -- wrong collection of segments
+  *  grid6x6                            FAILED -- wrong collection of segments
+ ==> FAILED
+
+Test 08: Test correctness with files having at most 4 points on any line segment:
+  *  input8                             FAILED -- wrong collection of segments
+  *  equidistant                        FAILED -- wrong collection of segments
+  *  input40                            FAILED -- wrong collection of segments
+  *  input80                            FAILED -- wrong collection of segments
+ ==> FAILED
+
+Test 09: Test correctness with files having 5+ points on some line segments:
+  *  input6                             FAILED -- wrong collection of segments
+  *  input9                             FAILED -- wrong collection of segments
+  *  input10                            FAILED -- wrong collection of segments
+  *  input20                            FAILED -- wrong collection of segments
+ ==> FAILED
+
+Test 10: Test correctness with point sets having no 4 collinear points:
+  *  random4                            CORRECT
+  *  circle10                           CORRECT
+  *  circle100                          CORRECT
+ ==> PASSED
+
+Test 11: Test correctness with additional files:
+  *  input50                            FAILED -- wrong collection of segments
+  *  input100                           FAILED -- wrong collection of segments
+  *  input200                           FAILED -- wrong collection of segments
+  *  input400                           FAILED -- wrong collection of segments
+  *  input800                           FAILED -- wrong collection of segments
+  *  input1600                          FAILED -- time limit exceeded
+ ==> FAILED
+
+
+Total: 6/11 tests passed!
+=========================================================================
+
+
+ Fast Pretest with input10 and numberOfSegments()
+
+Fast Test 01: Test constructor with width-by-height grid points
+Fast Test 02: Test numberOfPoints() with width-by-height grid points
+Fast Test 03: Test numberOfSegments() with width-by-height grid points
+Fast Test 04: Test numberOfSegments() with input grid files
+Fast Test 05: Test segments() with input grid files
+Fast Test 06: Test consistency and running time with repeated calls
+Fast Test 07: Test correctness with input grid files
+Fast Test 08: Test correctness with files having at most 4 points on any line segment
+Fast Test 09: Test correctness with files having 5+ points on some line segments
+Fast Test 10: Test correctness with point sets having no 4 collinear points
+Fast Test 11: Test correctness with misc input files
+Fast Test 12: Test correctness with large input files
+Fast Test 13: Test correctness with different minLength values on input10
+
+Total: 8/13 tests on Fast passed!
+
+
+Testing methods in your FastCollinearPoints, using our reference Point class. Running 11 or 13 total tests, not counting the pretest.
+All tests except the last one use 4 as minLength.
+Time limit is 20 seconds for each method call.
+=========================================================================
+Pretest with input10 and numberOfSegments():
+  *  input10                            CORRECT
+ ==> PASSED
+
+
+Test 01: Test constructor with width-by-height grid points:
+  *  4-by-50                            CONSTRUCTED
+  *  4-by-100                           CONSTRUCTED
+  *  4-by-200                           CONSTRUCTED
+  *  4-by-400                           CONSTRUCTED
+  *  4-by-800                           CONSTRUCTED
+  *  4-by-1600                          CONSTRUCTED
+ ==> PASSED
+
+Test 02: Test numberOfPoints() with width-by-height grid points:
+  *  4-by-50                            CORRECT
+  *  4-by-100                           CORRECT
+  *  4-by-200                           CORRECT
+  *  4-by-400                           CORRECT
+  *  4-by-800                           CORRECT
+  *  4-by-1600                          CORRECT
+ ==> PASSED
+
+
+ ** Tests 03--05 check for independence between numberOfSegments and segments **
+Test 03: Test numberOfSegments() with width-by-height grid points:
+  *  4-by-50                            CORRECT
+  *  4-by-100                           CORRECT
+  *  4-by-200                           CORRECT
+  *  4-by-400                           FAILED -- time limit exceeded
+  *  4-by-800                           FAILED -- time limit exceeded
+  *  4-by-1600                          FAILED -- time limit exceeded
+ ==> FAILED
+
+Test 04: Test numberOfSegments() with input grid files:
+  *  grid4x4                            CORRECT
+  *  grid5x5                            CORRECT
+  *  grid6x6                            CORRECT
+ ==> PASSED
+
+Test 05: Test segments() with input grid files:
+  *  grid4x4                            CORRECT
+  *  grid5x5                            CORRECT
+  *  grid6x6                            CORRECT
+ ==> PASSED
+
+
+Test 06: Test consistency and running time with repeated calls:
+  *  input800                           
+========================================================================
+call index      numberOfSegments()      items in segments()        time
+-------------------------------------------------------------------------
+0                         7                     8               1.30400
+1                         8                     8               2.44300
+2                         8                     8               3.58700
+3                         8                     8               4.77400
+4                         8                     8               5.95400
+5                         8                     8               7.10900
+6                         8                     8               8.28700
+7                         8                     8               9.53300
+8                         8                     8               10.77700
+9                         8                     8               12.00900
+-------------------------------------------------------------------------
+ ==> FAILED
+
+
+ ** Tests 07--13 are for correctness ** 
+Test 07: Test correctness with input grid files:
+  *  grid4x4                            CORRECT
+  *  grid5x5                            CORRECT
+  *  grid6x6                            CORRECT
+ ==> PASSED
+
+Test 08: Test correctness with files having at most 4 points on any line segment:
+  *  input8                             CORRECT
+  *  equidistant                        CORRECT
+  *  input40                            CORRECT
+  *  input80                            CORRECT
+ ==> PASSED
+
+Test 09: Test correctness with files having 5+ points on some line segments:
+  *  input6                             CORRECT
+  *  input9                             CORRECT
+  *  input10                            CORRECT
+  *  input20                            CORRECT
+ ==> PASSED
+
+Test 10: Test correctness with point sets having no 4 collinear points:
+  *  random4                            CORRECT
+  *  circle10                           CORRECT
+  *  circle100                          CORRECT
+ ==> PASSED
+
+Test 11: Test correctness with input files:
+  *  input50                            CORRECT
+  *  input100                           FAILED -- wrong number of segments
+		 expected: 62, 	 returned: 60 
+  *  input200                           CORRECT
+  *  input400                           CORRECT
+  *  input800                           FAILED -- wrong number of segments
+		 expected: 8, 	 returned: 7 
+  *  input1600                          CORRECT
+ ==> FAILED
+
+Test 12: Test correctness with large input files:
+  *  kw1260                             FAILED -- wrong number of segments
+		 expected: 288, 	 returned: 280 
+  *  rs1423                             FAILED -- wrong number of segments
+		 expected: 443, 	 returned: 431 
+  *  input3200                          CORRECT
+  *  input6400                          FAILED -- time limit exceeded
+ ==> FAILED
+
+
+Test 13: Test correctness with different minLength values on input10:
+  *  2                                  FAILED -- wrong number of segments
+		 expected: 29, 	 returned: 3 
+  *  3                                  CORRECT
+  *  4                                  CORRECT
+  *  5                                  CORRECT
+  *  6                                  CORRECT
+ ==> FAILED
+
+
+Total: 8/13 tests passed!
+=========================================================================
+
+Testing methods in your Point class. Running 3 total tests.
+=========================================================================
+
+Test 01: Test slopeTo( )
+  *      positive infinite slope        CORRECT
+  *      negative infinite slope        CORRECT
+  *      positive zero slope            CORRECT
+  *      general slope                  CORRECT
+  *      general slope                  CORRECT
+  *      general slope                  CORRECT
+  *      symmetric                      CORRECT
+ ==> PASSED
+
+
+Test 02: Test compareTo( )
+  *      reflexive                      CORRECT
+  *      reflexive                      CORRECT
+  *      antisymmetric                  CORRECT
+  *      transitive                     CORRECT
+  *      general case                   CORRECT
+  *      general case                   CORRECT
+ ==> PASSED
+
+
+Test 03: Test slopeOrder( )
+  *      reflexive                      CORRECT
+  *      antisymmetric                  CORRECT
+  *      transitive                     CORRECT
+  *      general case                   CORRECT
+  *      general case                   CORRECT
+ ==> PASSED
+
+
+Total: 3/3 tests passed!
+=========================================================================
+
+
